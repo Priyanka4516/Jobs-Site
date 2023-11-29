@@ -1,0 +1,15 @@
+<div class="JobDesc">
+    <div class="header">
+        <h1 class="header-details">Hacker News Jobs Board</h1>
+    </div>
+    <div *ngFor="let info of desc" class="main-container">
+        <a [href]="info.url" *ngIf="info.url" target="_blank" class="main-container-heading">{{info.title}}</a>
+        <div class="main-container-heading" *ngIf="!info.url">{{info.title}}</div>
+        <div class="main-container-details">By {{info.by}} {{info.time}}</div>
+        
+    </div>
+    <div class="footer" (click)="LoadMoreJobs()" *ngIf="display">
+        Load more jobs
+    </div>
+
+</div>
